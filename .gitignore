@@ -2,3 +2,6 @@
 
 gdb/djikstra
 gdb/*.o
+
+valgrind/main
+valgrind/*.o
