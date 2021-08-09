@@ -54,3 +54,14 @@ char *getArg(char *name) {
     }
   }
 }
+
+void cleanUp() {
+  for (int j = 0; j < argParser.len; j++) {
+    free(argParser.argList[j].name);
+    if (argParser.argList[j].result != NULL) {
+      free(argParser.argList[j].result);
+    }
+  }
+
+  free(argParser.argList);
+}
