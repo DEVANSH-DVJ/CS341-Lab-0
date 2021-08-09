@@ -18,6 +18,8 @@ int main(int argc, char **argv) {
   if (result)
     printf("Found J: %s\n", result);
 
+  cleanUp();
+
   free(result);
 
   return 0;
