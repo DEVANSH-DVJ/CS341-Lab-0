@@ -13,3 +13,4 @@ void initArgs();
 void addArg(char *name);
 void parseArgs(int argc, char **argv);
 char *getArg();
+void cleanUp();
