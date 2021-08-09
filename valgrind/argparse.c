@@ -50,9 +50,14 @@ void parseArgs(int argc, char **argv) {
 char *getArg(char *name) {
   for (int i = 0; i < argParser.len; i++) {
     if (strcmp(name, argParser.argList[i].name) == 0) {
-      return strdup(argParser.argList[i].result);
+      if (argParser.argList[i].result != NULL) {
+        return strdup(argParser.argList[i].result);
+      } else {
+        return NULL;
+      }
     }
   }
+  return NULL;
 }
 
 void cleanUp() {
