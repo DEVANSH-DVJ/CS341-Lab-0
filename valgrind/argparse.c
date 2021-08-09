@@ -15,6 +15,7 @@ void initArgs() {
 
 void addArg(char *name) {
   if (argParser.len < argParser.capacity) {
+    argParser.argList[argParser.len].result = NULL;
     argParser.argList[argParser.len++].name = strdup(name);
     return;
   }
@@ -28,6 +29,7 @@ void addArg(char *name) {
 
   free(argParser.argList);
   argParser.argList = tempArgs;
+  argParser.argList[argParser.len].result = NULL;
   argParser.argList[argParser.len++].name = strdup(name);
 }
 
